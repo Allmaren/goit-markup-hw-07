@@ -64,7 +64,7 @@ img {
 }
 
 /*@extend %align-list;*/
-.check-policy span, .check-policy, .modal-close, .clients-list__link, .original-list__fon, .head-design {
+.check-policy span, .check-policy, .modal-close, .clients-list__link, .com-soc-link, .original-list__fon, .head-design {
   display: flex;
   align-items: center;
 }
@@ -260,15 +260,10 @@ img {
   background-color: var(--white-color);
   padding-bottom: 0;
 }
+
 .original-list {
   display: flex;
   flex-wrap: wrap;
-}
-.original-list__item {
-  width: calc((100% - 90px) / 4);
-}
-.original-list__item + .original-list__item {
-  margin-left: 30px;
 }
 .original-list__fon {
   height: 120px;
@@ -295,6 +290,13 @@ img {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--pretitle-color);
+}
+
+.original-list__item {
+  width: calc((100% - 90px) / 4);
+}
+.original-list__item + .original-list__item {
+  margin-left: 30px;
 }
 
 .work {
@@ -367,6 +369,8 @@ img {
 }
 
 .profesion {
+  font-weight: inherit;
+  font-size: inherit;
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--pretitle-color);
@@ -378,20 +382,7 @@ img {
   gap: 10px;
   justify-content: center;
 }
-.com-soc-link {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--white-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.com-soc-link:hover, .com-soc-link:focus {
-  background-color: var(--akcent-color);
-}
+
 .com-soc-icon {
   width: 20px;
   height: 20px;
@@ -400,6 +391,19 @@ img {
 }
 .com-soc-link:hover .com-soc-icon, .com-soc-link:focus .com-soc-icon {
   fill: currentColor;
+}
+
+.com-soc-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white-color);
+  justify-content: center;
+  color: var(--white-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.com-soc-link:hover, .com-soc-link:focus {
+  background-color: var(--akcent-color);
 }
 
 /*Наши клиенты*/
@@ -539,7 +543,6 @@ img {
 .port-shad:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
 .port-shad:hover .port-info,
 .port-shad:focus .port-info {
   transform: translateY(0%);
