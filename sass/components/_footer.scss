@@ -1,0 +1,120 @@
+/*Футер*/
+.footer {
+	background-color: var(--fon-akcent);
+
+	font-size: 14px;
+	line-height: 1.71;
+	letter-spacing: 0.03em;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	.logo {
+		display: block;
+		margin-bottom: 20px;
+		margin-right: 0px;
+	}
+	.container {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+}
+.karta {
+	font-style: normal;
+
+	text-decoration: none;
+	cursor: default;
+	color: var(--white-color);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	&:hover,
+	&:focus {
+		color: var(--akcent-color);
+	}
+}
+.footer-akcent {
+	font-style: normal;
+	text-decoration: none;
+	cursor: default;
+	color: hsla(0, 0%, 100%, 0.6);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	&:hover,
+	&:focus {
+		color: var(--akcent-color);
+	}
+}
+
+.footer-item:not(:last-child) {
+	margin-bottom: 9px;
+}
+
+.sosial-title {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: var(--white-color);
+	margin-bottom: 20px;
+}
+
+.footer-soc {
+	display: flex;
+	gap: 10px;
+	&-icon {
+		width: 20px;
+		height: 20px;
+		fill: currentColor;
+		transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	&-link {
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--white-color);
+		transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+		&:hover,
+		&:focus {
+			background-color: var(--akcent-color);
+		}
+	}
+}
+
+.subscribe-email {
+	padding-left: 16px;
+	width: 358px;
+	height: 50px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+	border-radius: 4px;
+	background-color: transparent;
+	outline: none;
+	color: rgba(255, 255, 255, 0.6);
+	&::placeholder {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+		letter-spacing: 0.01em;
+		color: rgba(255, 255, 255, 0.6);
+	}
+}
+
+.subscribe-send {
+	margin-left: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 28px;
+	padding-right: 62px;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 30px;
+	position: relative;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.send-icon {
+	fill: var(--white-color);
+	position: absolute;
+	right: 28px;
+}
