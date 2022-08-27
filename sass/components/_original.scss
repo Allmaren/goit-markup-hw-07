@@ -10,8 +10,7 @@
 		background-color: #f5f4fa;
 		border-radius: 4px;
 		margin-bottom: 30px;
-		justify-content: center;
-		@extend %align-list;
+		@extend %align-list-social;
 	}
 	&__icon {
 		width: 70px;

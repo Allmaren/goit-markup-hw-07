@@ -1,8 +1,6 @@
 .work {
 	padding-top: 0;
 	&__title {
-		margin-bottom: 50px;
-		text-align: center;
 		@extend %text-margin;
 	}
 }

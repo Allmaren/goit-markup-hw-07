@@ -3,7 +3,7 @@
 	display: flex;
 	align-items: center;
 }
-
+/*@extend %text-margin;*/
 %text-margin {
 	margin-bottom: 50px;
 	text-align: center;
@@ -14,4 +14,10 @@
 	font-size: $fs;
 	line-height: $lh;
 	letter-spacing: $ls;
+}
+/*@extend %align-list-social;*/
+%align-list-social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

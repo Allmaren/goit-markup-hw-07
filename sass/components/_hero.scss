@@ -9,7 +9,7 @@
 	background-size: cover;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: var(--fon-akcent); /*если фон не прогрузился*/
+	background-color: var(--fon-accent); /*если фон не прогрузился*/
 }
 .hero-title {
 	color: var(--white-color);
@@ -23,7 +23,7 @@
 .button {
 	display: inline-block;
 	box-sizing: border-box;
-	background-color: var(--akcent-color);
+	background-color: var(--accent-color);
 	font-family: inherit;
 	@include text-design(700, 16px, 1.88, 0.06em);
 	text-align: center;

@@ -8,8 +8,7 @@
 		gap: 30px;
 	}
 	&-title {
-		margin-bottom: 50px;
-		text-align: center;
+		@extend %text-margin;
 		@extend %text-margin;
 	}
 }
@@ -57,12 +56,11 @@
 	height: 44px;
 	border-radius: 50%;
 	background: var(--white-color);
-	@extend %align-list;
-	justify-content: center;
+	@extend %align-list-social;
 	color: var(--white-color);
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	&:hover,
 	&:focus {
-		background-color: var(--akcent-color);
+		background-color: var(--accent-color);
 	}
 }

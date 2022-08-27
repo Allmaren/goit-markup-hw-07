@@ -30,8 +30,7 @@
 		right: 8px;
 		width: 30px;
 		height: 30px;
-		@extend %align-list;
-		justify-content: center;
+		@extend %align-list-social;
 		border: 1px solid rgba(0, 0, 0, 0.1);
 		border-radius: 50%;
 		background-color: transparent;
@@ -71,7 +70,7 @@
 	padding-left: 42px;
 	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	&:focus {
-		outline: 1px solid var(--akcent-color);
+		outline: 1px solid var(--accent-color);
 	}
 }
 
@@ -85,10 +84,10 @@
 	transform: translateY(-50%);
 }
 .form-input:focus + .input-icon {
-	fill: var(--akcent-color);
+	fill: var(--accent-color);
 }
 
-.form-input.coment {
+.form-input.comment {
 	height: 120px;
 	width: 100%;
 	resize: none;
@@ -104,13 +103,12 @@
 	text-align: center;
 }
 .agreement-link {
-	color: var(--akcent-color);
+	color: var(--accent-color);
 	text-decoration: none;
 }
 
 .check-policy {
-	@extend %align-list;
-	justify-content: center;
+	@extend %align-list-social;
 	margin-left: auto;
 	margin-right: auto;
 	@include text-design(inherit, 14px, 1.71, 0.03em);
@@ -124,15 +122,14 @@
 	border-radius: 3px;
 	outline: none;
 	margin-right: 7px;
-	@extend %align-list;
-	justify-content: center;
+	@extend %align-list-social;
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	.input-check:checked + & {
-		background-color: var(--akcent-color);
-		border-color: var(--akcent-color);
+		background-color: var(--accent-color);
+		border-color: var(--accent-color);
 	}
 	.input-check:focus + & {
-		border-color: var(--akcent-color);
+		border-color: var(--accent-color);
 	}
 }
 
