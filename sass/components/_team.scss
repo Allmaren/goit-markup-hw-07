@@ -7,6 +7,11 @@
 		flex-wrap: wrap;
 		gap: 30px;
 	}
+	&-title {
+		margin-bottom: 50px;
+		text-align: center;
+		@extend %text-margin;
+	}
 }
 
 .foto-item-fio {
@@ -23,11 +28,10 @@
 	letter-spacing: 0.03em;
 	margin-bottom: 10px;
 	color: var(--primary-text-color);
-	.cont-& {
-		padding: 30px 5px;
-	}
 }
-
+.cont-fio {
+	padding: 30px 5px;
+}
 .profesion {
 	line-height: 1.19;
 	letter-spacing: 0.03em;
@@ -54,8 +58,7 @@
 			background-color: var(--akcent-color);
 		}
 	}
-
-	.com-soc-icon {
+	&-icon {
 		width: 20px;
 		height: 20px;
 		fill: #afb1b8;

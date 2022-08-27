@@ -6,12 +6,6 @@
 	--pretitle-color: #757575;
 	--akcent-color: #2196f3;
 }
-
-body {
-	font-family: "Roboto", sans-serif;
-	color: var(--primary-text-color);
-}
-
 html {
 	box-sizing: border-box;
 }
@@ -22,6 +16,10 @@ html {
 	padding: 0px;
 }
 
+body {
+	font-family: "Roboto", sans-serif;
+	color: var(--primary-text-color);
+}
 ul {
 	padding-left: 0px;
 }
@@ -40,7 +38,6 @@ img {
 	max-width: 100%;
 	height: auto;
 }
-
 .container {
 	width: 1200px;
 	padding-left: 15px;
@@ -51,4 +48,11 @@ img {
 
 .section {
 	padding: 94px 0 94px 0;
+}
+.title {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	letter-spacing: 0.03em;
+	color: var(--primary-text-color);
 }

@@ -1,19 +1,45 @@
-/*Текст модалки*/
+/*Бакдроп*/
+.backdrop {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	/* background-color: #2196f3; */
+	top: 0;
+	background: rgba(0, 0, 0, 0.2);
+	transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .modal {
+	width: 528px;
+	min-height: 581px;
+	background-color: var(--white-color);
+	position: fixed;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: translate 500ms cubic-bezier(0.4, 0, 0.2, 1);
 	padding: 40px;
+	&-close {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		@extend %align-list;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 50%;
+		background-color: transparent;
+	}
 	&-title {
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 1.15;
+		@include text-design(700, 20px, 1.15, 0.03em);
 		text-align: center;
-		letter-spacing: 0.03em;
 		margin-bottom: 12px;
 	}
 	&-text {
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 1.17;
-		letter-spacing: 0.01em;
+		@include text-design(400, 12px, 1.17, 0.01em);
 		color: var(--pretitle-color);
 	}
 	&-list {
@@ -22,9 +48,39 @@
 			margin-top: 0;
 		}
 	}
+	&-send {
+		margin-top: 30px;
+		padding-left: 52px;
+		padding-right: 52px;
+		transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+		&:hover,
+		&:focus {
+			background-color: #188ce8;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+			border-radius: 4px;
+		}
+	}
 }
 
-.form-imput {
+.close-icon {
+	width: 18px;
+	height: 18px;
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	&:focus,
+	&:hover {
+		fill: #2196f3;
+	}
+}
+
+.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+/*Текст модалки*/
+
+.form-input {
 	width: 100%;
 	height: 40px;
 	border: 1px solid rgba(33, 33, 33, 0.2);
@@ -34,52 +90,45 @@
 	&:focus {
 		outline: 1px solid var(--akcent-color);
 	}
-	.coment {
+	.comment {
 		height: 120px;
 		width: 100%;
 		resize: none;
 		padding-left: 16px;
 		&::placeholder {
-			font-weight: 400;
-			font-size: 12px;
-			line-height: 14px;
-			letter-spacing: 0.01em;
+			@include text-design(400, 12px, 1.17, 0.01em);
 			color: rgba(117, 117, 117, 0.5);
 		}
 	}
 }
 
-.imput-wrap {
+.input-wrap {
 	position: relative;
 }
-.imput-icon {
+.input-icon {
 	position: absolute;
 	left: 12px;
 	top: 50%;
 	transform: translateY(-50%);
-	.form-imput:focus + & {
+	.form-input:focus + & {
 		fill: var(--akcent-color);
 	}
 }
 
-.licens {
+.agree {
 	margin-top: 20px;
 	text-align: center;
-}
-.umowa-link {
-	color: var(--akcent-color);
-	text-decoration: none;
+	&-link {
+		color: var(--akcent-color);
+	}
 }
 
 .check-policy {
-	display: flex;
+	@extend %align-list;
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
-	align-items: center;
-	font-size: 14px;
-	line-height: 1.71;
-	letter-spacing: 0.03em;
+	@include text-design(inherit, 14px, 1.71, 0.03em);
 	color: var(--pretitle-color);
 	& span {
 		width: 16px;
@@ -88,41 +137,23 @@
 		border-radius: 3px;
 		outline: none;
 		margin-right: 7px;
-		display: flex;
-		align-items: center;
+		@extend %align-list;
 		justify-content: center;
 		transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+		.input-check:checked + & {
+			background-color: var(--akcent-color);
+			border-color: var(--akcent-color);
+		}
+		.input-check:focus + & {
+			border-color: var(--akcent-color);
+		}
 	}
 }
 
 .check-icon {
 	fill: transparent;
 	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.input-check:checked + .check-policy span {
-	background-color: var(--akcent-color);
-	border-color: var(--akcent-color);
-}
-
-.input-check:checked + .check-policy .check-icon {
-	fill: var(--white-color);
-}
-
-.input-check:focus + .check-policy span {
-	border-color: var(--akcent-color);
-}
-.agree-link {
-	color: var(--akcent-color);
-}
-.model-send {
-	margin-top: 30px;
-	padding-left: 52px;
-	padding-right: 52px;
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	&:hover,
-	&:focus {
-		background-color: #188ce8;
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-		border-radius: 4px;
+	.input-check:checked + .check-policy & {
+		fill: var(--white-color);
 	}
 }

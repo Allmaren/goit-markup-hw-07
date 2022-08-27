@@ -1,7 +1,26 @@
+.list {
+	list-style: none;
+	margin-top: 0px;
+	margin-bottom: 0;
+}
+/*лого з варіантами*/
+.logo {
+	font-family: "Raleway", sans-serif;
+	@include text-design(700, 26px, 1.19, 0.03em);
+	color: var(--akcent-color);
+	text-decoration: none;
+	margin-right: 93px;
+	&__black {
+		color: #000000;
+	}
+	&__white {
+		color: var(--white-color);
+	}
+}
+
 /*Хедер*/
 .head-design {
-	display: flex;
-	align-items: center;
+	@extend %align-list;
 }
 
 .header {
@@ -10,86 +29,66 @@
 		padding-top: 24px;
 		padding-bottom: 25px;
 	}
-}
-
-/*Навігація хедер*/
-.list {
-	list-style: none;
-
-	margin-top: 0px;
-	margin-bottom: 0;
-}
-
-.header-navigation {
-	display: flex;
-	gap: 50px;
-}
-
-.header-adres {
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.02em;
-	text-decoration: none;
-	display: block;
-	color: var(--pretitle-color);
-	fill: var(--akcent-color);
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	&:hover,
-	&:focus {
-		color: var(--akcent-color);
-	}
-	.mail,
-	.tel {
+	&-navigation,
+	&-nav {
 		display: flex;
-		align-items: center;
-		gap: 10px;
-		fill: var(--pretitle-color);
+		gap: 50px;
 	}
-}
 
-.header-link {
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.02em;
-	text-decoration: none;
-
-	display: block;
-	color: var(--primary-text-color);
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	&.current {
-		position: relative;
-		&::after {
-			content: "";
-			display: block;
-			width: 100%;
-			height: 4px;
-			border-radius: 2px;
-			background-color: var(--akcent-color);
-			position: absolute;
-			top: 45px;
+	&-link {
+		@include text-design(500, 14px, 1.14, 0.02em);
+		text-decoration: none;
+		display: block;
+		color: var(--primary-text-color);
+		transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+		&:hover,
+		&:focus {
+			color: var(--akcent-color);
+		}
+		&.current {
+			position: relative;
+			&::after {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 4px;
+				border-radius: 2px;
+				background-color: var(--akcent-color);
+				position: absolute;
+				top: 45px;
+			}
 		}
 	}
-	&:hover,
-	&:focus {
-		color: var(--akcent-color);
+	&-address {
+		@include text-design(500, 14px, 1.14, 0.02em);
+		text-decoration: none;
+		display: block;
+		color: var(--pretitle-color);
+		fill: var(--akcent-color);
+		transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+		&.mail,
+		&.tel {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			fill: var(--pretitle-color);
+		}
+		&:hover,
+		&:focus {
+			color: var(--akcent-color);
+		}
+		.mail-icon,
+		.tel-icon {
+			transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+		}
+		&:hover .mail-icon,
+		&:focus .mail-icon,
+		&:hover .tel-icon,
+		&:focus .tel-icon {
+			fill: currentColor;
+		}
 	}
-}
-
-.header-nav {
-	margin-left: auto;
-	display: flex;
-	gap: 50px;
-}
-
-.header-adres .mail-icon,
-.header-adres .tel-icon {
-	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	&:hover .mail-icon,
-	&:focus .mail-icon,
-	&:hover .tel-icon,
-	&:focus .tel-icon {
-		fill: currentColor;
+	&-nav {
+		margin-left: auto;
 	}
 }
